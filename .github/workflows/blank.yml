@@ -1,0 +1,17 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Upload
+
+on: [workflow_dispatch]
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Upload readme
+        uses: actions/upload-artifact@v2
+        with:
+          name: readme
+          path: README.md
